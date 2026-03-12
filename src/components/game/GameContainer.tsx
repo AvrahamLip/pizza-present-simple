@@ -46,6 +46,11 @@ export const GameContainer = () => {
           />
         )}
       </AnimatePresence>
+      <footer className="fixed bottom-0 left-0 right-0 p-2 text-center text-xs text-muted-foreground bg-background/50 backdrop-blur-sm z-50">
+        <p>
+          &copy; {new Date().getFullYear()} Pizza Present Simple | Version 1.0.0 | Updated: {new Date().toLocaleDateString()} | Developed by <a href="mailto:lip.avi@gmail.com" className="hover:text-primary transition-colors">lip.avi@gmail.com</a>
+        </p>
+      </footer>
     </div>
   );
 };
