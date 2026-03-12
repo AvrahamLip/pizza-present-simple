@@ -1,0 +1,263 @@
+[
+  {
+    "subject": "He",
+    "verbBase": "prepare",
+    "verbConjugated": "prepares",
+    "correctRule": "+s",
+    "hint": "'Prepare' ends in 'e', just add +S!",
+    "sentence": "a special pizza for the VIP guest.",
+    "level": 1
+  },
+  {
+    "subject": "She",
+    "verbBase": "bake",
+    "verbConjugated": "bakes",
+    "correctRule": "+s",
+    "hint": "'Bake' ends in 'e', just add +S!",
+    "sentence": "delicious cookies after work.",
+    "level": 1
+  },
+  {
+    "subject": "It",
+    "verbBase": "smell",
+    "verbConjugated": "smells",
+    "correctRule": "+s",
+    "hint": "Most verbs just need +S!",
+    "sentence": "like fresh basil in the kitchen.",
+    "level": 1
+  },
+  {
+    "subject": "He",
+    "verbBase": "slice",
+    "verbConjugated": "slices",
+    "correctRule": "+s",
+    "hint": "'Slice' ends in 'e', just add +S!",
+    "sentence": "the pepperoni very carefully.",
+    "level": 1
+  },
+  {
+    "subject": "She",
+    "verbBase": "serve",
+    "verbConjugated": "serves",
+    "correctRule": "+s",
+    "hint": "'Serve' ends in 'e', just add +S!",
+    "sentence": "the customers with a smile.",
+    "level": 1
+  },
+  {
+    "subject": "He",
+    "verbBase": "catch",
+    "verbConjugated": "catches",
+    "correctRule": "+es",
+    "hint": "Verbs ending in -ch need the ES Spice Jar!",
+    "sentence": "the falling dough.",
+    "level": 1
+  },
+  {
+    "subject": "She",
+    "verbBase": "finish",
+    "verbConjugated": "finishes",
+    "correctRule": "+es",
+    "hint": "Verbs ending in -sh need the ES Spice Jar!",
+    "sentence": "all orders before 9 PM.",
+    "level": 1
+  },
+  {
+    "subject": "It",
+    "verbBase": "pass",
+    "verbConjugated": "passes",
+    "correctRule": "+es",
+    "hint": "Verbs ending in -ss need the ES Spice Jar!",
+    "sentence": "the quality test every time.",
+    "level": 1
+  },
+  {
+    "subject": "He",
+    "verbBase": "go",
+    "verbConjugated": "goes",
+    "correctRule": "+es",
+    "hint": "Verbs ending in -o need the ES Spice Jar!",
+    "sentence": "to the market for fresh cheese.",
+    "level": 1
+  },
+  {
+    "subject": "She",
+    "verbBase": "relax",
+    "verbConjugated": "relaxes",
+    "correctRule": "+es",
+    "hint": "Verbs ending in -x need the ES Spice Jar!",
+    "sentence": "on her break.",
+    "level": 1
+  },
+  {
+    "subject": "He",
+    "verbBase": "marry",
+    "verbConjugated": "marries",
+    "correctRule": "+ies",
+    "hint": "Consonant + Y rule! knead the Y into IES.",
+    "sentence": "his love for pizza and art.",
+    "level": 2
+  },
+  {
+    "subject": "She",
+    "verbBase": "copy",
+    "verbConjugated": "copies",
+    "correctRule": "+ies",
+    "hint": "Consonant + Y rule! knead the Y into IES.",
+    "sentence": "the secret sauce recipe.",
+    "level": 2
+  },
+  {
+    "subject": "It",
+    "verbBase": "dry",
+    "verbConjugated": "dries",
+    "correctRule": "+ies",
+    "hint": "Consonant + Y rule! knead the Y into IES.",
+    "sentence": "the herbs in the sun.",
+    "level": 2
+  },
+  {
+    "subject": "He",
+    "verbBase": "worry",
+    "verbConjugated": "worries",
+    "correctRule": "+ies",
+    "hint": "Consonant + Y rule! knead the Y into IES.",
+    "sentence": "about the oven temperature.",
+    "level": 2
+  },
+  {
+    "subject": "She",
+    "verbBase": "empty",
+    "verbConjugated": "empties",
+    "correctRule": "+ies",
+    "hint": "Consonant + Y rule! knead the Y into IES.",
+    "sentence": "the trash every evening.",
+    "level": 2
+  },
+  {
+    "subject": "He",
+    "verbBase": "buys",
+    "verbConjugated": "buys",
+    "correctRule": "+s",
+    "hint": "Vowel + Y ends in a regular +S. Check the battery power!",
+    "sentence": "new aprons for the staff.",
+    "level": 2
+  },
+  {
+    "subject": "She",
+    "verbBase": "pays",
+    "verbConjugated": "pays",
+    "correctRule": "+s",
+    "hint": "Vowel + Y ends in a regular +S. Check the battery power!",
+    "sentence": "for the delivery.",
+    "level": 2
+  },
+  {
+    "subject": "He",
+    "verbBase": "says",
+    "verbConjugated": "says",
+    "correctRule": "+s",
+    "hint": "Irregular pronunciation but regular +S rule!",
+    "sentence": "'Ciao' to everyone.",
+    "level": 2
+  },
+  {
+    "subject": "She",
+    "verbBase": "does",
+    "verbConjugated": "does",
+    "correctRule": "+es",
+    "hint": "'Do' ends in 'o', use the ES Spice Jar!",
+    "sentence": "the accounting at night.",
+    "level": 2
+  },
+  {
+    "subject": "It",
+    "verbBase": "seems",
+    "verbConjugated": "seems",
+    "correctRule": "+s",
+    "hint": "Most verbs just need +S!",
+    "sentence": "like a busy day.",
+    "level": 3
+  },
+  {
+    "subject": "He",
+    "verbBase": "always teaches",
+    "verbConjugated": "always teaches",
+    "correctRule": "+es",
+    "hint": "Frequency adverb first, then the verb with +ES!",
+    "sentence": "new techniques.",
+    "level": 3
+  },
+  {
+    "subject": "She",
+    "verbBase": "usually usually watches",
+    "verbConjugated": "usually watches",
+    "correctRule": "+es",
+    "hint": "Frequency adverb placed correctly!",
+    "sentence": "the dough rise.",
+    "level": 3
+  },
+  {
+    "subject": "It",
+    "verbBase": "often often smells",
+    "verbConjugated": "often smells",
+    "correctRule": "+s",
+    "hint": "Regular +S after the adverb.",
+    "sentence": "delicious.",
+    "level": 3
+  },
+  {
+    "subject": "He",
+    "verbBase": "never never fries",
+    "verbConjugated": "never fries",
+    "correctRule": "+ies",
+    "hint": "Adverb + Consonant + Y rule.",
+    "sentence": "the pizza base.",
+    "level": 3
+  },
+  {
+    "subject": "She",
+    "verbBase": "sometimes sometimes fixes",
+    "verbConjugated": "sometimes fixes",
+    "correctRule": "+es",
+    "hint": "Adverb + ES rule.",
+    "sentence": "the blender.",
+    "level": 3
+  },
+  {
+    "subject": "He",
+    "verbBase": "often often cries",
+    "verbConjugated": "often cries",
+    "correctRule": "+ies",
+    "hint": "Adverb + IES rule.",
+    "sentence": "when chopping onions.",
+    "level": 3
+  },
+  {
+    "subject": "It",
+    "verbBase": "always always goes",
+    "verbConjugated": "always goes",
+    "correctRule": "+es",
+    "hint": "Adverb + ES rule.",
+    "sentence": "well with a cold drink.",
+    "level": 4
+  },
+  {
+    "subject": "He",
+    "verbBase": "doesn't eat",
+    "verbConjugated": "doesn't eat",
+    "correctRule": "+s",
+    "hint": "Wait! In negative form 'doesn't' takes the S, the verb stays in base form!",
+    "sentence": "anchovies on his pizza.",
+    "level": 4
+  },
+  {
+    "subject": "She",
+    "verbBase": "doesn't watch",
+    "verbConjugated": "doesn't watch",
+    "correctRule": "+es",
+    "hint": "Negative form rule! 'Does' already has the ES.",
+    "sentence": "TV during her shift.",
+    "level": 4
+  }
+]
