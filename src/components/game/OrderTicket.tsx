@@ -20,14 +20,14 @@ export const OrderTicket = ({ question, selectedAnswer, isCorrect }: OrderTicket
       );
     }
     return (
-      <span className="relative inline-block mx-1">
+      <span className="relative inline-block mx-1 w-36 md:w-48 align-bottom">
         <span
-          className="inline-block border-b-4 border-dashed w-36 md:w-48 align-bottom"
+          className="inline-block border-b-4 border-dashed w-full"
           style={{ borderColor: "hsl(var(--secondary))" }}
         />
         <span 
-          className="absolute -top-10 left-1/2 -translate-x-1/2 font-display text-4xl md:text-5xl whitespace-nowrap"
-          style={{ color: "hsl(var(--primary))", opacity: 0.9, textShadow: "0 0 1px white" }}
+          className="absolute -top-10 left-0 w-full text-center font-display text-4xl md:text-5xl whitespace-nowrap"
+          style={{ color: "hsl(var(--primary))", opacity: 0.9, textShadow: "0 1px 2px white" }}
         >
           {question.verbBase}
         </span>
@@ -72,15 +72,15 @@ export const OrderTicket = ({ question, selectedAnswer, isCorrect }: OrderTicket
         </div>
 
         {/* The sentence */}
-        <div className="font-display text-3xl md:text-4xl font-bold leading-relaxed" style={{ color: "hsl(var(--foreground))" }}>
+        <div className="font-display text-2xl md:text-4xl font-bold leading-relaxed" style={{ color: "hsl(var(--foreground))" }}>
           <span
-            className="inline-block px-3 py-1 rounded-lg mr-2 text-primary-foreground font-display text-3xl md:text-4xl font-bold"
+            className="inline-block px-2 py-0.5 rounded-lg mr-1 text-primary-foreground font-display text-2xl md:text-4xl font-bold align-bottom"
             style={{ background: "hsl(var(--primary))" }}
           >
             {question.subject}
           </span>
           {getPlaceholderContent()}
-          <span className="ml-2">{question.sentence}</span>
+          <span className="ml-1 md:ml-2 align-bottom">{question.sentence}</span>
         </div>
 
         {/* Feedback message */}
@@ -102,7 +102,7 @@ export const OrderTicket = ({ question, selectedAnswer, isCorrect }: OrderTicket
           )}
           {isCorrect === true && (
             <motion.p
-              className="mt-3 font-body text-sm font-semibold px-4 py-2 rounded-lg"
+              className="mt-3 font-body text-xs md:text-sm font-semibold px-2 md:px-4 py-2 rounded-lg"
               style={{
                 background: "hsl(var(--accent) / 0.1)",
                 color: "hsl(var(--accent))",
