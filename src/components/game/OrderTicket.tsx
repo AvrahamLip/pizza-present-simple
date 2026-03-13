@@ -22,14 +22,14 @@ export const OrderTicket = ({ question, selectedAnswer, isCorrect }: OrderTicket
     return (
       <span className="relative inline-block mx-1">
         <span
-          className="inline-block border-b-4 border-dashed w-32 md:w-40 align-bottom"
+          className="inline-block border-b-4 border-dashed w-36 md:w-48 align-bottom"
           style={{ borderColor: "hsl(var(--secondary))" }}
         />
         <span 
-          className="absolute -top-6 left-1/2 -translate-x-1/2 font-body text-sm font-bold italic opacity-70"
-          style={{ color: "hsl(var(--muted-foreground))" }}
+          className="absolute -top-10 left-1/2 -translate-x-1/2 font-display text-4xl md:text-5xl whitespace-nowrap"
+          style={{ color: "hsl(var(--primary))", opacity: 0.9, textShadow: "0 0 1px white" }}
         >
-          ({question.verbBase})
+          {question.verbBase}
         </span>
       </span>
     );

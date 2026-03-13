@@ -25,7 +25,7 @@ function shuffleArray<T>(arr: T[]): T[] {
 }
 
 export const GameScreen = ({ onGameOver }: GameScreenProps) => {
-  const [currentLevel, setCurrentLevel] = useState<1 | 2 | 3 | 4>(1);
+  const [currentLevel, setCurrentLevel] = useState<number>(1);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [lives, setLives] = useState(MAX_LIVES);
   const [score, setScore] = useState(0);
@@ -43,12 +43,18 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const getLevelInfo = (level: number) => {
-    switch (level) {
-      case 1: return { name: "The Professional", rule: "Unlocked: +IES verbs & Irregulars!" };
-      case 2: return { name: "The Master", rule: "Unlocked: Rush Hour! Adverbs included." };
-      case 3: return { name: "Legendary Pizzaiolo", rule: "Final Challenge: 10s Timer & Negatives!" };
-      default: return { name: "Game Complete", rule: "You are the Pizza Master!" };
+    if (level <= 3) {
+      switch (level) {
+        case 1: return { name: "The Professional", rule: "Practice mode: +S and +ES rules!" };
+        case 2: return { name: "The Master", rule: "Practice mode: +IES (Consonant + Y) rules!" };
+        case 3: return { name: "Legendary Pizzaiolo", rule: "Practice mode: Mixed rules & Adverbs!" };
+      }
+    } else if (level <= 6) {
+      return { name: "Lunch Rush", rule: "Be fast! 30 second timer enabled." };
+    } else if (level <= 9) {
+      return { name: "Dinner Rush", rule: "Ultimate Challenge! 15 second timer!" };
     }
+    return { name: "Game Complete", rule: "You are the Pizza Master!" };
   };
 
   // Filter questions for the current level and shuffle them
@@ -64,11 +70,12 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
   };
 
   const startNextLevel = useCallback(() => {
-    const next = (currentLevel + 1) as 1 | 2 | 3 | 4;
+    const next = currentLevel + 1;
     setCurrentLevel(next);
     
-    // Load next level questions
-    const nextQuestions = shuffleArray(QUESTIONS.filter(q => q.level === next)).slice(0, 5);
+    // Load next level questions (map 1-3, 4-6, 7-9 to batches 1, 2, 3)
+    const batchLevel = ((next - 1) % 3) + 1;
+    const nextQuestions = shuffleArray(QUESTIONS.filter(q => q.level === batchLevel)).slice(0, 5);
     setCurrentLevelQuestions(nextQuestions);
     setQuestionIndex(0);
     setLevelCorrectCount(0);
@@ -78,17 +85,19 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
     setCustomerSatisfied(null);
     setShowLevelUp(false);
     
-    // Timer only relevant for Level 4
-    if (next === 4) {
-      setTimeLeft(10);
-    } else {
+    // Timer logic
+    if (next <= 3) {
       setTimeLeft(999);
+    } else if (next <= 6) {
+      setTimeLeft(30);
+    } else {
+      setTimeLeft(15);
     }
   }, [currentLevel]);
 
   const nextLevel = useCallback(() => {
-    if (currentLevel >= 4) {
-      onGameOver(score, correctCount, 20); // End of game
+    if (currentLevel >= 9) {
+      onGameOver(score, correctCount, 45); // 5 * 9
       return;
     }
     setShowLevelUp(true);
@@ -104,14 +113,14 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
       setChefMood("neutral");
       setCustomerSatisfied(null);
       
-      const baseTime = currentLevel === 4 ? 10 : 999;
+      const baseTime = currentLevel <= 3 ? 999 : (currentLevel <= 6 ? 30 : 15);
       setTimeLeft(baseTime);
     }
   }, [questionIndex, currentLevelQuestions.length, nextLevel, currentLevel]);
 
   // Timer
   useEffect(() => {
-    if (selectedRule !== null || currentLevel < 4) return;
+    if (selectedRule !== null || currentLevel <= 3) return;
     
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
@@ -150,7 +159,7 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
           const newLives = l - 1;
           if (newLives <= 0) {
             advanceRef.current = setTimeout(() => {
-              onGameOver(score, correctCount, 20);
+              onGameOver(score, correctCount, 45);
             }, 1800);
             return 0;
           }
@@ -193,13 +202,17 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
         </div>
 
         {/* Characters row */}
-        <div className="flex items-end justify-between px-6 pt-2 pb-1">
-          <ChefCharacter mood={chefMood} />
-          <CustomerVIP subject={currentQuestion.subject} satisfied={customerSatisfied} />
+        <div className="flex items-end justify-between px-6 pt-2 pb-1 overflow-hidden">
+          <div className="w-1/3 md:w-auto">
+            <ChefCharacter mood={chefMood} />
+          </div>
+          <div className="w-1/2 md:w-auto">
+            <CustomerVIP subject={currentQuestion.subject} satisfied={customerSatisfied} />
+          </div>
         </div>
 
         {/* Order Ticket */}
-        <div className="px-4 py-3">
+        <div className="px-2 md:px-4 py-3">
           <OrderTicket
             question={currentQuestion}
             selectedAnswer={selectedRule}
@@ -208,7 +221,7 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
         </div>
 
         {/* Topping Station */}
-        <div className="px-4 pb-6 mt-auto">
+        <div className="px-2 md:px-4 pb-4 md:pb-6 mt-auto">
           <ToppingStation
             onSelect={(rule) => handleAnswer(rule)}
             disabled={selectedRule !== null}

@@ -53,7 +53,7 @@ export const ToppingStation = ({ onSelect, disabled, selectedRule, correctRule }
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2 md:gap-4">
         {TOPPING_OPTIONS.map((option) => {
           const state = getState(option.rule);
           const colors = COLORS[option.color];
@@ -63,7 +63,7 @@ export const ToppingStation = ({ onSelect, disabled, selectedRule, correctRule }
               key={option.rule}
               onClick={() => !disabled && onSelect(option.rule)}
               disabled={disabled}
-              className="relative flex flex-col items-center justify-center gap-2 rounded-2xl py-5 px-3 font-body font-semibold transition-all cursor-pointer select-none"
+              className="relative flex flex-col items-center justify-center gap-1 md:gap-2 rounded-xl md:rounded-2xl py-3 md:py-5 px-1 md:px-3 font-body font-semibold transition-all cursor-pointer select-none"
               style={{
                 background: state === "dimmed" ? "hsl(var(--muted))" : colors.bg,
                 border: `3px solid ${state === "dimmed" ? "hsl(var(--border))" : colors.border}`,
