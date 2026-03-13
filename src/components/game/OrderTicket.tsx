@@ -20,17 +20,17 @@ export const OrderTicket = ({ question, selectedAnswer, isCorrect }: OrderTicket
       );
     }
     return (
-      <span className="relative inline-block mx-1 w-36 md:w-48 align-bottom">
-        <span
-          className="inline-block border-b-4 border-dashed w-full"
-          style={{ borderColor: "hsl(var(--secondary))" }}
-        />
+      <span className="relative inline-block mx-2 w-28 md:w-40 align-bottom">
         <span 
-          className="absolute -top-10 left-0 w-full text-center font-display text-4xl md:text-5xl whitespace-nowrap"
-          style={{ color: "hsl(var(--primary))", opacity: 0.9, textShadow: "0 1px 2px white" }}
+          className="absolute -top-7 md:top-[-44px] left-0 w-full text-center font-display text-3xl md:text-5xl whitespace-nowrap"
+          style={{ color: "hsl(var(--primary))", opacity: 0.9, textShadow: "0 1px 1px white" }}
         >
           {question.verbBase}
         </span>
+        <span
+          className="block border-b-4 border-dashed w-full mb-1"
+          style={{ borderColor: "hsl(var(--secondary))" }}
+        />
       </span>
     );
   };
@@ -63,9 +63,9 @@ export const OrderTicket = ({ question, selectedAnswer, isCorrect }: OrderTicket
         }}
       >
         {/* Ticket header */}
-        <div className="flex items-center justify-center gap-2 mb-3">
+        <div className="flex items-center justify-center gap-2 mb-8 md:mb-10">
           <div className="h-px flex-1" style={{ background: "hsl(var(--pizzeria-ticket-border))" }} />
-          <span className="font-body text-xs font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
+          <span className="font-body text-[10px] md:text-xs font-semibold uppercase tracking-widest" style={{ color: "hsl(var(--muted-foreground))" }}>
             📋 Order Ticket
           </span>
           <div className="h-px flex-1" style={{ background: "hsl(var(--pizzeria-ticket-border))" }} />
