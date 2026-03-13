@@ -10,8 +10,8 @@ interface StartScreenProps {
 export const StartScreen = ({ highScore, onStart }: StartScreenProps) => {
   return (
     <div
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundImage: `url(${kitchenBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      className="relative min-h-screen min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
+      style={{ backgroundImage: `url("${kitchenBg}")`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-foreground/60 backdrop-blur-sm" />

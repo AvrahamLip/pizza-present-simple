@@ -182,11 +182,11 @@ export const GameScreen = ({ onGameOver }: GameScreenProps) => {
 
   return (
     <div
-      className="relative min-h-screen flex flex-col"
-      style={{ backgroundImage: `url(${kitchenBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      className="relative min-h-screen min-h-[100dvh] flex flex-col"
+      style={{ backgroundImage: `url("${kitchenBg}")`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0" style={{ background: "hsl(var(--background) / 0.75)" }} />
+      <div className="absolute inset-0" style={{ background: "hsla(var(--background), 0.75)" }} />
 
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* HUD */}

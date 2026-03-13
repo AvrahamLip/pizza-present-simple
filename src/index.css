@@ -11,87 +11,68 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Pizzeria Red */
-    --primary: 4 64% 46%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 4 70% 60%;
-    --primary-dark: 4 64% 36%;
+    --primary: 4, 64%, 46%;
+    --primary-foreground: 0, 0%, 100%;
+    --primary-light: 4, 70%, 60%;
+    --primary-dark: 4, 64%, 36%;
 
     /* Golden Crust */
-    --secondary: 37 90% 51%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 37 90% 68%;
+    --secondary: 37, 90%, 51%;
+    --secondary-foreground: 0, 0%, 100%;
+    --secondary-light: 37, 90%, 68%;
 
     /* Warm Flour White */
-    --background: 180 33% 99%;
-    --foreground: 20 25% 18%;
+    --background: 180, 33%, 99%;
+    --foreground: 20, 25%, 18%;
 
     /* Basil Green */
-    --accent: 145 63% 42%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 145 55% 55%;
+    --accent: 145, 63%, 42%;
+    --accent-foreground: 0, 0%, 100%;
+    --accent-light: 145, 55%, 55%;
 
     /* Neutral tones */
-    --card: 35 30% 96%;
-    --card-foreground: 20 25% 18%;
+    --card: 35, 30%, 96%;
+    --card-foreground: 20, 25%, 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 25% 18%;
+    --popover: 0, 0%, 100%;
+    --popover-foreground: 20, 25%, 18%;
 
-    --muted: 35 20% 90%;
-    --muted-foreground: 20 15% 45%;
+    --muted: 35, 20%, 90%;
+    --muted-foreground: 20, 15%, 45%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0, 84%, 60%;
+    --destructive-foreground: 0, 0%, 100%;
 
-    --border: 35 20% 82%;
-    --input: 35 20% 88%;
-    --ring: 4 64% 46%;
-
-    --radius: 0.75rem;
-
-    /* Sidebar (unused but required) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 35, 20%, 82%;
+    --input: 35, 20%, 88%;
+    --ring: 4, 64%, 46%;
 
     /* Custom game tokens */
-    --pizzeria-chalkboard: 150 20% 15%;
-    --pizzeria-chalkboard-text: 60 20% 92%;
-    --pizzeria-wood: 30 50% 35%;
-    --pizzeria-ticket: 45 60% 96%;
-    --pizzeria-ticket-border: 35 50% 70%;
-    --pizzeria-heart: 0 80% 60%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(4 64% 46%), hsl(37 90% 51%));
-    --gradient-chalkboard: linear-gradient(160deg, hsl(150 20% 15%), hsl(160 18% 22%));
-    --gradient-ticket: linear-gradient(160deg, hsl(45 60% 98%), hsl(35 40% 92%));
-    --gradient-wood: linear-gradient(180deg, hsl(30 50% 40%), hsl(25 50% 30%));
+    --pizzeria-chalkboard: 150, 20%, 15%;
+    --pizzeria-chalkboard-text: 60, 20%, 92%;
+    --pizzeria-wood: 30, 50%, 35%;
+    --pizzeria-ticket: 45, 60%, 96%;
+    --pizzeria-ticket-border: 35, 50%, 70%;
+    --pizzeria-heart: 0, 80%, 60%;
 
     /* Shadows */
-    --shadow-pizzeria: 0 8px 32px -8px hsl(4 64% 46% / 0.4);
-    --shadow-card: 0 4px 16px -4px hsl(20 25% 18% / 0.2);
-    --shadow-topping: 0 6px 20px -4px hsl(20 25% 18% / 0.3);
-
-    /* Fonts */
-    --font-display: 'Amatic SC', cursive;
-    --font-body: 'Montserrat', sans-serif;
+    --shadow-pizzeria: 0 8px 32px -8px hsla(var(--primary), 0.4);
+    --shadow-card: 0 4px 16px -4px hsla(var(--foreground), 0.2);
+    --shadow-topping: 0 6px 20px -4px hsla(var(--foreground), 0.3);
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    touch-action: manipulation;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   h1, h2, h3, .font-display {
